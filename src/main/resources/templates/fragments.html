@@ -10,12 +10,15 @@
 </head>
 <body>
 
-<nav th:fragment="navigation">
-    <a href="/cheese">List</a> |
-    <a href="/cheese/add">Add</a> |
-    <a href="/cheese/remove">Remove</a>
+<nav th:fragment="topnav">
+    <a href="/cheese">Home</a> |
+    <a href="/menu">Menus</a>
     <a href="/category">Categories</a>
 </nav>
 
+<nav th:fragment="botnav">
+    <a th:href="'/' + ${variable} + '/add'">Add</a> |
+    <a th:href="'/' + ${varialbe} + '/remove'">Remove</a>
+</nav>
 </body>
 </html>

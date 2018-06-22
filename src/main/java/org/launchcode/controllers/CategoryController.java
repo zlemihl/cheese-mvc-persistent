@@ -16,12 +16,13 @@ import javax.validation.Valid;
 @RequestMapping("category")
 public class CategoryController {
     @Autowired
-    private CategoryDao categoryDao;
+    CategoryDao categoryDao;
 
     @RequestMapping(value = "")
     public String index(Model model){
         model.addAttribute("categories",categoryDao.findAll());
         model.addAttribute("title", "Categories");
+        model.addAttribute("variable", "category");
         return "category/index";
     }
 
@@ -37,6 +38,7 @@ public class CategoryController {
     public String add(Model model, @ModelAttribute @Valid Category category, Errors errors) {
         if(errors.hasErrors()){
             model.addAttribute("title", "Add Category");
+            model.addAttribute(category);
             return "category/add";
         } else {
             categoryDao.save(category);

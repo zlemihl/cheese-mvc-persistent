@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+    <head th:replace="fragments :: head"></head>
+    <body class="container">
+        <h1 th:text="${title}">Default Title</h1>
+        <nav th:replace="fragments :: topnav"></nav>
+
+        <ul th:each="menu : ${menus}">
+            <li th:text="${menu.name}"></li>
+        </ul>
+        <nav th:replace="fragments :: botnav"></nav>
+    </body>
+</html>
