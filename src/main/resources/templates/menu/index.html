@@ -4,10 +4,13 @@
     <body class="container">
         <h1 th:text="${title}">Default Title</h1>
         <nav th:replace="fragments :: topnav"></nav>
+        <p th:unless="${menus} and ${menus.size()}">no menus :(</p>
 
-        <ul th:each="menu : ${menus}">
-            <li th:text="${menu.name}"></li>
+        <ul>
+            <li th:each="menu : ${menus}">
+                <a th:href="'menu/view/' + ${menu.id}" th:text="${menu.name}"></a>
+            </li>
         </ul>
-        <nav th:replace="fragments :: botnav"></nav>
+    <a href="/menu/add">Add</a>
     </body>
 </html>

@@ -8,7 +8,6 @@
 <ul th:each="category : ${categories}">
     <li th:text="${category.name}"></li>
 </ul>
-
-<nav th:replace="fragments :: botnav"></nav>
+<a href="/category/add">Add</a>
 </body>
 </html>

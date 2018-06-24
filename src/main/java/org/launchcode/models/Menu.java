@@ -24,10 +24,6 @@ public class Menu {
 
     public Menu(){ }
 
-    public Menu(String name) {
-        this.name = name;
-    }
-
     public int getId() {
         return id;
     }
